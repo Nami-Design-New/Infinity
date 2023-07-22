@@ -16,7 +16,7 @@ $(document).ready(function () {
     let currentSection = null;
     sections.forEach((sec) => {
       const rect = sec.getBoundingClientRect();
-      if (rect.top <= 80 && rect.bottom >= 80) {
+      if (rect.top <= 100 && rect.bottom >= 100) {
         currentSection = sec;
       }
     });
@@ -41,7 +41,7 @@ $(document).ready(function () {
       }
     };
   }
-  window.addEventListener("scroll", throttle(updateActiveLink, -80));
+  window.addEventListener("scroll", throttle(updateActiveLink, -100));
   // nav menu
   $(".navBtn").click(function () {
     $(this).toggleClass("active");

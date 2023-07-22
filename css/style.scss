@@ -321,7 +321,6 @@ content {
   justify-content: center;
   align-items: center;
   .preloaderImg {
-    background-color: #eee;
     width: 100px;
     height: 100px;
     mask-image: url("../img/fav.svg");
@@ -348,6 +347,17 @@ content {
         width: 80px;
         height: 80px;
       }
+    }
+    &::before{
+      content: '';
+      display: block;
+      width: 100px;
+      height: 100%;
+      background-image: url("../img/fav.svg");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: grayscale(1) opacity(.2);
     }
     @keyframes slide-up {
       from {
@@ -576,7 +586,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 140px 0 80px;
+  padding: 140px 0 40px;
   overflow: hidden;
   @media (max-width: 768px) {
     padding: 100px 0 80px;
@@ -706,6 +716,7 @@ header {
     position: relative;
     margin: 50px auto 0;
     transition: var(--transition);
+    display: flex;
     @media (max-width: 768px) {
       margin: 30px auto 0;
 
@@ -745,7 +756,11 @@ header {
 }
 @keyframes scrollDown {
   0% {
-    transform: translate(-50%, 8);
+    transform: translate(-50%, 0px);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-50%, 16px);
     opacity: 1;
   }
   100% {
