@@ -10,10 +10,8 @@ $(document).ready(function () {
   }
   setFavicon();
   // active link in scroll
-  // JavaScript
   const navLinks = document.querySelectorAll(".navLink");
   const sections = document.querySelectorAll(".section");
-
   function findCurrentSection() {
     let currentSection = null;
     sections.forEach((sec) => {
@@ -24,7 +22,6 @@ $(document).ready(function () {
     });
     return currentSection;
   }
-
   function updateActiveLink() {
     const currentSection = findCurrentSection();
     navLinks.forEach((link) => {
@@ -34,7 +31,6 @@ $(document).ready(function () {
       }
     });
   }
-  // Use throttle to reduce the frequency of scroll events triggering the update
   function throttle(callback, delay) {
     let previousCall = new Date().getTime();
     return function () {
@@ -45,15 +41,12 @@ $(document).ready(function () {
       }
     };
   }
-  // Throttle the scroll event to improve performance
   window.addEventListener("scroll", throttle(updateActiveLink, -80));
-
   // nav menu
   $(".navBtn").click(function () {
     $(this).toggleClass("active");
     $(".navMenu").toggleClass("active");
   });
-
   //navbar ainmation
   $(window).scroll(function () {
     var appScroll = $(document).scrollTop();
@@ -63,14 +56,12 @@ $(document).ready(function () {
       $(".pageHeader").removeClass("headerAnimate");
     }
   });
-
   //products Slider
   var blogSlider = new Swiper(".blogSlider", {
     pagination: {
       el: ".blogPagination",
       clickable: true,
     },
-
     // centeredSlides: true,
     // loop: true,
     slidesPerView: "auto",
