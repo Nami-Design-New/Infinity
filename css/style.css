@@ -1357,7 +1357,7 @@ footer .container {
   flex-wrap: wrap;
   gap: 8px;
   justify-content: center;
-  padding: 24px;
+  padding: 24px 28px;
   text-align: center;
 }
 footer .container img {
@@ -1369,6 +1369,7 @@ footer .container img {
 footer .container h6 {
   font-family: "PoppinsBold", Sans-serif;
   color: var(--mainColor);
+  font-size: 16px;
 }
 
 .panner {

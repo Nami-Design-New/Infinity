@@ -1252,7 +1252,7 @@ footer {
     flex-wrap: wrap;
     gap: 8px;
     justify-content: center;
-    padding: 24px;
+    padding: 24px 28px;
     text-align: center;
     img {
       height: 20px;
@@ -1262,6 +1262,7 @@ footer {
     h6 {
       font-family: "PoppinsBold", Sans-serif;
       color: var(--mainColor);
+      font-size: 16px;
     }
   }
 }
