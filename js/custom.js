@@ -16,7 +16,7 @@ $(document).ready(function () {
     let currentSection = null;
     sections.forEach((sec) => {
       const rect = sec.getBoundingClientRect();
-      if (rect.top <= 100 && rect.bottom >= 100) {
+      if (rect.top <= 200 && rect.bottom >= 200) {
         currentSection = sec;
       }
     });
@@ -41,7 +41,7 @@ $(document).ready(function () {
       }
     };
   }
-  window.addEventListener("scroll", throttle(updateActiveLink, -100));
+  window.addEventListener("scroll", throttle(updateActiveLink, -200));
   // nav menu
   $(".navBtn").click(function () {
     $(this).toggleClass("active");
@@ -83,6 +83,51 @@ $(document).ready(function () {
       },
     },
   });
+
+  //serviceSlider
+  var serviceSlider = new Swiper(".serviceSlider", {
+    spaceBetween: 10,
+    loop: true,
+    // effect: "fade",
+    speed: 1000,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".serviceSliderPagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".serviceSliderNext",
+      prevEl: ".serviceSliderPrev",
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      467: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      992: {
+        slidesPerView: 3,
+      },
+      1200: {
+        slidesPerView: 4,
+      },
+    },
+  });
+  $(".serviceSlider").hover(
+    function () {
+      this.swiper.autoplay.stop();
+    },
+    function () {
+      this.swiper.autoplay.start();
+    }
+  );
 });
 // ////////////////////////////////////////
 // ////////////////////////////////////////
@@ -110,7 +155,7 @@ $(document).ready(function () {
   AOS.init({
     offset: 20,
     delay: 50,
-    duration: 750,
+    duration: 1000,
     // easing: "linear",
     once: true,
   });
