@@ -332,9 +332,14 @@ button {
 }
 
 content {
-  min-height: 13.29vh;
+  min-height: calc(100dvh - 152px);
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 992px) {
+  content {
+    min-height: calc(100dvh - 136px);
+  }
 }
 
 .preloader {
@@ -407,7 +412,7 @@ content {
 }
 
 header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -648,7 +653,7 @@ header.headerAnimate {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 140px 0 40px;
+  padding: 60px 0 40px;
   overflow: hidden;
 }
 @media (max-width: 768px) {
@@ -1364,4 +1369,83 @@ footer .container img {
 footer .container h6 {
   font-family: "PoppinsBold", Sans-serif;
   color: var(--mainColor);
+}
+
+.panner {
+  padding: 48px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(252, 172, 74, 0.1019607843);
+}
+.panner h1 {
+  font-family: "PoppinsBold", Sans-serif;
+  color: var(--mainColor);
+}
+.panner ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.panner ul li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.panner ul li a {
+  color: var(--darkColor);
+}
+.panner ul li::after {
+  content: " > ";
+}
+.panner ul li:last-child a {
+  font-family: "PoppinsBold", Sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.panner ul li:last-child::after {
+  display: none;
+}
+
+.careersForm {
+  padding: 40px 0;
+}
+.careersForm .title {
+  font-family: "PoppinsBold", Sans-serif;
+  margin: auto;
+  color: var(--darkColor);
+  text-transform: none;
+  padding: 0 24px;
+}
+.careersForm form {
+  padding: 48px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.careersForm form label {
+  font-family: "PoppinsBold", Sans-serif;
+  font-size: 14px;
+}
+.careersForm form .send {
+  background-color: var(--mainColor);
+  padding: 16px;
+  width: min(100% - 24px, 300px);
+  margin: auto;
+  color: var(--whiteColor);
+  border-radius: 100px;
+}
+
+.filepond--credits {
+  display: none !important;
+}
+
+.filepond--image-clip {
+  direction: ltr !important;
 }/*# sourceMappingURL=style.css.map */

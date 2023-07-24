@@ -295,9 +295,12 @@ button {
   }
 }
 content {
-  min-height: 13.29vh;
+  min-height: calc(100dvh - 152px);
   display: flex;
   flex-direction: column;
+  @media (max-width: 992px) {
+    min-height: calc(100dvh - 136px);
+  }
 }
 /////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -370,7 +373,7 @@ content {
   }
 }
 header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -576,11 +579,6 @@ header {
 .container-xxl {
   max-width: 1140px;
 }
-// content {
-//   display: flex;
-//   flex-direction: column;
-//   padding-top: 80px;
-// }
 .title {
   font-family: "Qatar", Sans-serif;
   color: var(--secondColor);
@@ -609,7 +607,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 140px 0 40px;
+  padding: 60px 0 40px;
   overflow: hidden;
   @media (max-width: 768px) {
     padding: 100px 0 80px;
@@ -1248,7 +1246,7 @@ header {
 footer {
   background-color: var(--secondColor);
   color: white;
-  .container{
+  .container {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -1256,7 +1254,7 @@ footer {
     justify-content: center;
     padding: 24px;
     text-align: center;
-    img{
+    img {
       height: 20px;
       object-fit: contain;
       filter: brightness(0) invert(1);
@@ -1266,4 +1264,81 @@ footer {
       color: var(--mainColor);
     }
   }
+}
+
+.panner {
+  padding: 48px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fcac4a1a;
+  h1 {
+    font-family: "PoppinsBold", Sans-serif;
+    color: var(--mainColor);
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      a {
+        color: var(--darkColor);
+      }
+      &::after {
+        content: " > ";
+      }
+      &:last-child {
+        a {
+          font-family: "PoppinsBold", Sans-serif;
+          user-select: none;
+        }
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.careersForm {
+  padding: 40px 0;
+  .title {
+    font-family: "PoppinsBold", Sans-serif;
+    margin: auto;
+    color: var(--darkColor);
+    text-transform: none;
+    padding: 0 24px;
+  }
+  form {
+    padding: 48px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    label {
+      font-family: "PoppinsBold", Sans-serif;
+      font-size: 14px;
+    }
+    .send{
+      background-color: var(--mainColor);
+      padding: 16px;
+      width: min(100% - 24px , 300px);
+      margin: auto;
+      color: var(--whiteColor);
+      border-radius: 100px;
+    }
+  }
+}
+.filepond--credits {
+  display: none !important;
+}
+.filepond--image-clip {
+  direction: ltr !important;
 }

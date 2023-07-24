@@ -56,32 +56,9 @@ $(document).ready(function () {
       $(".pageHeader").removeClass("headerAnimate");
     }
   });
-  //products Slider
-  var blogSlider = new Swiper(".blogSlider", {
-    pagination: {
-      el: ".blogPagination",
-      clickable: true,
-    },
-    // centeredSlides: true,
-    // loop: true,
-    slidesPerView: "auto",
-    spaceBetween: 10,
-    speed: 1000,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 2,
-      },
-      991: {
-        slidesPerView: 3,
-      },
-    },
+  // filepond
+  $(".filepond-multiple").filepond({
+    allowMultiple: true,
   });
 
   //serviceSlider
