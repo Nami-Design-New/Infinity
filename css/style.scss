@@ -1165,6 +1165,80 @@ header {
     object-fit: contain;
     animation: rotateAnimation 8s linear infinite;
   }
+
+  .allServices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    .serviceTow {
+      flex: 1;
+      min-width: 250px;
+      min-height: 200px;
+      background-color: var(--whiteColor);
+      padding: 24px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      transition: var(--transition);
+      flex-direction: column;
+      overflow: hidden;
+      gap: 12px;
+      h6 {
+        font-family: "PoppinsBold", Sans-serif;
+        color: var(--secondColor);
+      }
+      ul li,
+      p {
+        transition: var(--transition);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 14px;
+        z-index: 2;
+        color: var(--whiteColor);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(100%);
+        &::before {
+          content: "";
+          width: 100%;
+          height: 100%;
+          border-radius: 12px;
+          background-color: var(--secondColor);
+          position: absolute;
+          left: 0;
+          top: 0;
+          display: block;
+          z-index: -1;
+          color: w;
+        }
+      }
+      ul {
+        margin: 0;
+      }
+      &:hover {
+        // background-color: var(--mainColor);
+        // color: var(--whiteColor);
+        ul li,
+        p {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0%);
+
+        }
+      }
+    }
+  }
 }
 
 .contact {
@@ -1327,10 +1401,10 @@ footer {
       font-family: "PoppinsBold", Sans-serif;
       font-size: 14px;
     }
-    .send{
+    .send {
       background-color: var(--mainColor);
       padding: 16px;
-      width: min(100% - 24px , 300px);
+      width: min(100% - 24px, 300px);
       margin: auto;
       color: var(--whiteColor);
       border-radius: 100px;

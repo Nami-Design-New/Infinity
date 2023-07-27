@@ -1270,6 +1270,75 @@ header.headerAnimate {
      object-fit: contain;
   animation: rotateAnimation 8s linear infinite;
 }
+.ourServices .allServices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.ourServices .allServices .serviceTow {
+  flex: 1;
+  min-width: 250px;
+  min-height: 200px;
+  background-color: var(--whiteColor);
+  padding: 24px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  transition: var(--transition);
+  flex-direction: column;
+  overflow: hidden;
+  gap: 12px;
+}
+.ourServices .allServices .serviceTow h6 {
+  font-family: "PoppinsBold", Sans-serif;
+  color: var(--secondColor);
+}
+.ourServices .allServices .serviceTow ul li,
+.ourServices .allServices .serviceTow p {
+  transition: var(--transition);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+  z-index: 2;
+  color: var(--whiteColor);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100%);
+}
+.ourServices .allServices .serviceTow ul li::before,
+.ourServices .allServices .serviceTow p::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background-color: var(--secondColor);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  z-index: -1;
+  color: w;
+}
+.ourServices .allServices .serviceTow ul {
+  margin: 0;
+}
+.ourServices .allServices .serviceTow:hover ul li,
+.ourServices .allServices .serviceTow:hover p {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0%);
+}
 
 .contact {
   padding: 100px 0;
