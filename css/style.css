@@ -995,7 +995,7 @@ header.headerAnimate {
   position: relative;
 }
 .services .head .shape3 {
-  height: 10px;
+  height: 25px;
   width: -moz-fit-content;
   width: fit-content;
   animation: slideSide 5s linear infinite;
@@ -1296,7 +1296,7 @@ header.headerAnimate {
   font-family: "PoppinsBold", Sans-serif;
   color: var(--secondColor);
 }
-.ourServices .allServices .serviceTow ul li,
+.ourServices .allServices .serviceTow ul,
 .ourServices .allServices .serviceTow p {
   transition: var(--transition);
   position: absolute;
@@ -1312,11 +1312,13 @@ header.headerAnimate {
   font-size: 14px;
   z-index: 2;
   color: var(--whiteColor);
+  flex-direction: column;
   opacity: 0;
   visibility: hidden;
   transform: translateY(100%);
+  list-style: none;
 }
-.ourServices .allServices .serviceTow ul li::before,
+.ourServices .allServices .serviceTow ul::before,
 .ourServices .allServices .serviceTow p::before {
   content: "";
   width: 100%;
@@ -1333,7 +1335,7 @@ header.headerAnimate {
 .ourServices .allServices .serviceTow ul {
   margin: 0;
 }
-.ourServices .allServices .serviceTow:hover ul li,
+.ourServices .allServices .serviceTow:hover ul,
 .ourServices .allServices .serviceTow:hover p {
   opacity: 1;
   visibility: visible;
@@ -1341,7 +1343,7 @@ header.headerAnimate {
 }
 
 .contact {
-  padding: 100px 0;
+  padding: 40px 0;
 }
 .contact .head {
   display: flex;
@@ -1350,7 +1352,7 @@ header.headerAnimate {
   margin-bottom: 24px;
 }
 .contact .shape3 {
-  height: 10px;
+  height: 25px;
   width: -moz-fit-content;
   width: fit-content;
   animation: slideSide 5s linear infinite;

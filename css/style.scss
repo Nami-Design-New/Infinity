@@ -891,7 +891,7 @@ header {
     flex-direction: column;
     position: relative;
     .shape3 {
-      height: 10px;
+      height: 25px;
       width: fit-content;
       animation: slideSide 5s linear infinite;
       margin-bottom: 12px;
@@ -1190,7 +1190,7 @@ header {
         font-family: "PoppinsBold", Sans-serif;
         color: var(--secondColor);
       }
-      ul li,
+      ul,
       p {
         transition: var(--transition);
         position: absolute;
@@ -1206,9 +1206,11 @@ header {
         font-size: 14px;
         z-index: 2;
         color: var(--whiteColor);
+        flex-direction: column;
         opacity: 0;
         visibility: hidden;
         transform: translateY(100%);
+        list-style: none;
         &::before {
           content: "";
           width: 100%;
@@ -1229,7 +1231,7 @@ header {
       &:hover {
         // background-color: var(--mainColor);
         // color: var(--whiteColor);
-        ul li,
+        ul,
         p {
           opacity: 1;
           visibility: visible;
@@ -1242,7 +1244,7 @@ header {
 }
 
 .contact {
-  padding: 100px 0;
+  padding: 40px 0;
   .head {
     display: flex;
     flex-direction: column;
@@ -1250,7 +1252,7 @@ header {
     margin-bottom: 24px;
   }
   .shape3 {
-    height: 10px;
+    height: 25px;
     width: fit-content;
     animation: slideSide 5s linear infinite;
     margin-bottom: 12px;
