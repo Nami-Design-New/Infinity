@@ -6,7 +6,7 @@
   --lightGrayColor: #d6d6d6;
   --grayColor: #777;
   --transition: 0.3s ease-in-out;
-  --shadow: 0px 2px 4px #c1c1c1;
+  --shadow: 0px 4px 8px #d1d1d1;
   --BigShadow: 0 4px 24px 0 #0000000d;
 }
 
@@ -1278,7 +1278,7 @@ header.headerAnimate {
 .ourServices .allServices .serviceTow {
   flex: 1;
   min-width: 250px;
-  min-height: 200px;
+  min-height: 180px;
   background-color: var(--whiteColor);
   padding: 24px;
   border-radius: 8px;
@@ -1291,55 +1291,204 @@ header.headerAnimate {
   flex-direction: column;
   overflow: hidden;
   gap: 12px;
+  isolation: isolate;
 }
 .ourServices .allServices .serviceTow h6 {
   font-family: "PoppinsBold", Sans-serif;
   color: var(--secondColor);
 }
-.ourServices .allServices .serviceTow ul,
-.ourServices .allServices .serviceTow p {
-  transition: var(--transition);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 24px;
+.ourServices .allServices .serviceTow ul {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 14px;
-  z-index: 2;
-  color: var(--whiteColor);
   flex-direction: column;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(100%);
+  gap: 2px;
+  padding: 0;
+  margin: 0;
   list-style: none;
 }
-.ourServices .allServices .serviceTow ul::before,
-.ourServices .allServices .serviceTow p::before {
+.ourServices .allServices .serviceTow ul li {
+  font-size: 14px;
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+.ourServices .allServices .serviceTow ul li::before {
   content: "";
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
-  background-color: var(--secondColor);
+  min-width: 6px;
+  height: 6px;
+  background-color: var(--mainColor);
+  border-radius: 100%;
+  display: block;
+}
+.ourServices .allServices .serviceTow p {
+  font-size: 14px;
+}
+.ourServices .allServices .serviceTow::before {
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  background-color: rgba(252, 172, 74, 0.4431372549);
   display: block;
+  border-radius: 100%;
+  transition: var(--transition);
   z-index: -1;
-  color: w;
 }
-.ourServices .allServices .serviceTow ul {
-  margin: 0;
+.ourServices .allServices .serviceTow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background-color: rgba(252, 172, 74, 0.1529411765);
+  display: block;
+  border-radius: 100%;
+  transition: var(--transition);
+  z-index: -1;
+}
+.ourServices .allServices .serviceTow:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-5px);
+  z-index: 2;
 }
 .ourServices .allServices .serviceTow:hover ul,
 .ourServices .allServices .serviceTow:hover p {
   opacity: 1;
   visibility: visible;
   transform: translateY(0%);
+}
+.ourServices .allServices .serviceTow:hover::before {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+.ourServices .allServices .serviceTow:hover::after {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+.flipCard {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  perspective: 1000px;
+}
+@media (max-width: 576px) {
+  .flipCard {
+    height: 200px;
+  }
+}
+.flipCard .cardFront {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  border-radius: 16px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  backface-visibility: hidden;
+  transform: rotateY(0deg);
+  transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.flipCard .cardFront .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: auto;
+  color: var(--whiteColor);
+  gap: 8px;
+}
+.flipCard .cardFront .content h6 {
+  font-family: "PoppinsBold", Sans-serif;
+}
+.flipCard .cardFront .content .arrow {
+  min-width: 32px;
+  height: 48px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #fff;
+}
+.flipCard .cardFront .content .arrow img {
+  filter: brightness(0) invert(1);
+}
+.flipCard .cardFront .content .animatedLink {
+  color: var(--whiteColor);
+}
+.flipCard .cardFront .content .animatedLink i {
+  font-size: 24px;
+}
+.flipCard .cardFront .content .animatedLink span {
+  border-color: var(--whiteColor);
+}
+.flipCard .cardBack {
+  padding: 20px;
+  position: absolute;
+  border-radius: 16px;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1058823529);
+  background-color: #fff;
+}
+.flipCard .cardBack .content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.flipCard .cardBack .content h6 {
+  font-family: "PoppinsBold", Sans-serif;
+  color: var(--secondColor);
+}
+.flipCard .cardBack .content ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.flipCard .cardBack .content ul li {
+  font-size: 13px;
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  color: #777;
+}
+.flipCard .cardBack .content ul li::before {
+  content: "";
+  min-width: 6px;
+  height: 6px;
+  background-color: var(--mainColor);
+  border-radius: 100%;
+  display: block;
+}
+.flipCard .cardBack .content p {
+  font-size: 13px;
+  color: #777;
+}
+.flipCard:hover {
+  z-index: 2;
+}
+.flipCard:hover .cardFront {
+  transform: rotateY(-180deg);
+}
+.flipCard:hover .cardBack {
+  transform: rotateY(0deg);
 }
 
 .contact {
