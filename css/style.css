@@ -1556,8 +1556,15 @@ header.headerAnimate {
   font-family: "PoppinsBold", Sans-serif;
   color: var(--secondColor);
 }
+.contact .companyInfo .info .more a,
 .contact .companyInfo .info .more p {
   font-size: 14px;
+}
+.contact .companyInfo .info .more a {
+  color: var(--secondColor);
+}
+.contact .companyInfo .info .more a:hover {
+  color: var(--mainColor);
 }
 .contact .map {
   width: 100%;

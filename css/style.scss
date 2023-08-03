@@ -1498,8 +1498,15 @@ header {
           font-family: "PoppinsBold", Sans-serif;
           color: var(--secondColor);
         }
+        a ,
         p {
           font-size: 14px;
+        }
+        a{
+          color: var(--secondColor);
+          &:hover{
+            color: var(--mainColor);
+          }
         }
       }
     }
